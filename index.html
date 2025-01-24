@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>color-scheme</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+
+      .item {
+        color: black;
+        background-color: lightgray;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .item {
+          background-color: black;
+          color: lightgray;
+        }
+      }
+
+      .light {
+        color-scheme: light;
+      }
+
+      .dark {
+        color-scheme: dark;
+      }
+
+      .lightDark {
+        color: light-dark(black, lightgray);
+        background-color: light-dark(lightgray, black);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="item">No color mode</p>
+    <div class="light">
+      <p class="item">This is a paragraph.</p>
+    </div>
+    <div class="dark">
+      <p class="item">This is another paragraph.</p>
+    </div>
+
+    <div class="light">
+      <p class="lightDark">This is a paragraph.</p>
+    </div>
+    <div class="dark">
+      <p class="lightDark">This is another paragraph.</p>
+    </div>
+  </body>
+</html>
